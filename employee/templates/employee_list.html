@@ -1,0 +1,25 @@
+<html>
+
+<body>
+
+<h1>Total Employee List</h1>
+
+ <table>
+  <tr>
+    <th>EmployeeId</th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Department</th>
+  </tr>
+ <tr>
+{% for employee in object_list %}
+    <td>{{ employee.employeeId }}</td>
+    <td>{{ employee.name }}</td>
+     <td>{{ employee.position }}</td>
+    <td>{{ employee.department }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
