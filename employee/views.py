@@ -8,10 +8,10 @@ from .models import  Employee
 from .forms import Registrationform, Profileform
 
 
+def Displayemployees(request):
 
-class Displayemployees(ListView):
-    model = Employee
-    template_name = 'employee_list.html'
+    employees = Employee.objects.all()
+    return render(request, 'employee_list.html', {'employees':employees})
 
 
 def Signup(request):

@@ -12,7 +12,7 @@
 
 
 <h1>Total Employee List</h1>
-
+<p>{{ employees }}</p>
  <table>
   <tr>
     <th>EmployeeId</th>
@@ -21,7 +21,7 @@
     <th>Department</th>
   </tr>
  <tr>
-{% for employee in object_list %}
+{% for employee in employees %}
     <td>{{ employee.employeeId }}</td>
     <td>{{ employee.name }}</td>
      <td>{{ employee.position }}</td>
