@@ -26,6 +26,7 @@ def Signup(request):
         form = Registrationform()
     return render(request, 'employee_signup.html',{'form':form})
 
+
 @login_required(login_url='login')
 def Profileview(request):
     if request.method == 'POST':

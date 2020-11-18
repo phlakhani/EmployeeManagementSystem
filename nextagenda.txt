@@ -1,0 +1,7 @@
+
+1. yet to do
+user should not be able to create profile more than one
+(know if u could find is there any way to check user already has profile with if)
+while creating profile. i  'user' field. user should see his name only not other user in system
+
+

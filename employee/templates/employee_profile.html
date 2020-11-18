@@ -1,0 +1,17 @@
+{% load crispy_forms_tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employee profile</title>
+</head>
+<body>
+
+     <form method="POST">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <button type="submit">Create Profile</button>
+  </form>
+
+</body>
+</html>
