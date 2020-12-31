@@ -11,7 +11,13 @@ from .forms import Registrationform, Profileform
 def Displayemployees(request):
 
     employees = Employee.objects.all()
-    return render(request, 'employee_list.html', {'employees':employees})
+    HadProfileUsers = [e.username for e in employees]
+    
+    context = {
+        'employees': employees,
+        'HadProfileUsers':str(HadProfileUsers)
+    }
+    return render(request, 'employee_list.html',context)
 
 
 def Signup(request):
@@ -39,6 +45,31 @@ def Profileview(request):
     else:
         form = Profileform()
     return render(request,'employee_profile.html',{'form':form})
+
+
+
+@login_required(login_url='login')
+def editProfile(request, pk):
+    user = Employee.objects.get(id=pk)
+    form = Profileform(instance=user)
+
+    if request.method == 'POST':
+        form = Profileform(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+        return ('home')
+    else:
+        context = { 'form':form }
+        return render(request, 'edit_profile.html', context)
+
+
+
+
+
+
+
+
+
 
 
 
